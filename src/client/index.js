@@ -1,5 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from 'Common/components/App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from 'Components/App/App';
 
-render(<App />, document.getElementById('root'));
+render(
+	(<Router>
+        <App />
+    </Router>), 
+	document.getElementById('root')
+);

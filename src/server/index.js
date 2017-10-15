@@ -1,18 +1,19 @@
 import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import App from 'Common/components/App';
-import template from 'Common/template';
+import {getConfigs} from 'Configs';
+import {getLogger} from 'Utils/logger';
+import {middlewareSsr} from './middleware.ssr';
 
-const server = express();
+const app = express();
 
-server.use('/build', express.static('build'));
+global.__CONFIG__ = getConfigs();
+global.__LOGGER__ = getLogger(__CONFIG__.logger.level);
 
-server.get('/', (req, res) => {
-  res.send(template({
-    body: renderToString(<App />),
-    title: 'Hello World from the server'
-  }));
+app
+.use('/build', express.static('build'))
+.use('/static', express.static('static'))
+.use((req, res) => {
+	res.send(middlewareSsr(req));
 });
 
-server.listen(4444);
+app.listen(__CONFIG__.port);
+__LOGGER__.info(`App listening on port ${__CONFIG__.port}`);

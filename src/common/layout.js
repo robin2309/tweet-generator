@@ -4,6 +4,7 @@ export default ({ body, title }) => {
     <html>
       <head>
         <title>${title}</title>
+        <link rel="stylesheet" href="/build/styles.css">
       </head>
       
       <body>
