@@ -1,4 +1,5 @@
 import express from 'express';
+
 import {getConfigs} from 'Configs';
 import {getLogger} from 'Utils/logger';
 import {middlewareSsr} from './middleware.ssr';

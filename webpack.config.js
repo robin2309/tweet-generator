@@ -42,11 +42,13 @@ const outputTemplate = {
 const alias = {
 	Common: path.resolve(__dirname, 'src/common/'),
 	Components: path.resolve(__dirname, 'src/common/components/'),
-	Containers: path.resolve(__dirname, 'src/common/containers'),
+	Containers: path.resolve(__dirname, 'src/common/containers/'),
 	Client: path.resolve(__dirname, 'src/client/'),
 	Server: path.resolve(__dirname, 'src/server/'),
 	Configs: path.resolve(__dirname, 'configs/'),
-	Utils: path.resolve(__dirname, 'src/utils/')
+	Utils: path.resolve(__dirname, 'src/utils/'),
+	Reducers: path.resolve(__dirname, 'src/common/reducers/'),
+	Actions: path.resolve(__dirname, 'src/common/actions/')
 };
 
 const serverConfig = {

@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-export default class Home extends Component {
+import actions from 'Actions';
+import Test from 'Components/Test/Test';
+
+class Home extends Component {
 	constructor(props) {
 		super(props);
 	}
+
+	componentWillMount() {
+		this.props.dispatch(actions.changePage('home'));
+	}
 	
   	render() {
+  		console.log('render');
+  		console.log(this.props);
 	    return (
 	      	<div>
-	        	<h1>Hey im the homepage</h1>
+	        	<Test pageName={this.props.pageName} />
 	      	</div>
     	);
   	}
 }
+
+const mapStateToProps = (state, ownProps) => {
+	return {
+		pageName: state.pageName
+	};
+}
+
+export default connect(mapStateToProps)(Home)
