@@ -1,5 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ children }) => (
-    <main>{children}</main>
-);
+const Main = ({ children }) => <main>{children}</main>;
+
+Main.propTypes = {
+  children: PropTypes.object
+};
+
+export default Main;

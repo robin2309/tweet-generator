@@ -1,19 +1,21 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
-import initialState from './initialState';
-import constants from 'Actions/constants';
+import selectedCountry from './countries/selected';
+import countriesList from './countries/list';
+import selectedRetailer from './retailers/selected';
+import retailersList from './retailers/list';
+import auth from './auth';
 
-function pageName(state = 'default', action) {
-	switch (action.type) {
-		case constants.CHANGE_PAGE: 
-			return action.pageName;
-		default: 
-			return state;
-	}
-}
-
-const myApp = combineReducers({
-	pageName
-});
+const myApp = {
+  countries: combineReducers({
+    selected: selectedCountry,
+    list: countriesList
+  }),
+  retailers: combineReducers({
+    selected: selectedRetailer,
+    list: retailersList
+  }),
+  auth
+};
 
 export default myApp;

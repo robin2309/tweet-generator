@@ -1,50 +1,84 @@
 {
-  "name": "front-boilerplate",
+  "name": "tiendeo-stores-webapp",
   "version": "1.0.0",
-  "description": "boilerplate for front project",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "test",
-    "build": "webpack",
-    "start:dev": "NODE_ENV=development nodemon build/server.bundle.js"
+  "directories": {
+    "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/robin2309/front-boilerplate.git"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "node startDevServer.js",
+    "build": "webpack --config ./webpack/webpack.config.js",
+    "lint": "eslint --ext .jsx,.js ./src || exit 0",
+    "prettier": "prettier --config ./.prettierrc --write \"./src/**/*.js?(x)\""
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/robin2309/front-boilerplate/issues"
-  },
-  "homepage": "https://github.com/robin2309/front-boilerplate#readme",
   "dependencies": {
-    "express": "^4.16.2",
-    "lodash": "^4.17.4",
-    "moment": "^2.19.1",
-    "nodemon": "^1.12.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-promise": "^0.5.3",
-    "winston": "^2.4.0"
-  },
-  "devDependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cookie-parser": "^1.4.3",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "ignore-loader": "^0.1.2",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "source-map-loader": "^0.2.2",
-    "style-loader": "^0.19.0",
-    "webpack": "^3.6.0"
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.40",
+    "mini-css-extract-plugin": "^0.2.0",
+    "moment": "^2.21.0",
+    "newrelic": "^3.3.0",
+    "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.2.2",
+    "react-select": "^1.2.1",
+    "react-virtualized-select": "^3.1.3",
+    "redux": "^3.7.2",
+    "redux-connect": "^7.0.0",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-hot-middleware": "^2.21.2",
+    "webpack-node-externals": "^1.6.0",
+    "winston": "^2.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.17.2",
+    "prettier": "1.11.1",
+    "react-hot-loader": "^4.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/stylesMock.js"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup-jasmine-env.js",
+    "testEnvironment": "node"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "jest": true
+  },
+  "extends": ["standard", "standard-react"],
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "indent": 0
+  }
+}

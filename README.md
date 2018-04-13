@@ -1,6 +1,12 @@
-# front-boilerplate
+# Tiendeo Stores Webapp
 
-TODO when go live: 
-- uglify js
-- minify css
-- review configs
+## Start up local environment for dev
+```
+$ npm install
+$ npm run start:dev
+```
+
+## Start up docker 
+```
+$ ./run-docker.sh
+```

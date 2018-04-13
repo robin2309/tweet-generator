@@ -1,33 +1,17 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import { asyncConnect } from 'redux-connect';
 
-import actions from 'Actions';
-import Test from 'Components/Test/Test';
+import countriesActions from 'Actions/countries';
+import retailersActions from 'Actions/retailers';
 
-class Home extends Component {
-	constructor(props) {
-		super(props);
-	}
+const Home = props => {
+  return <div />;
+};
 
-	componentWillMount() {
-		this.props.dispatch(actions.changePage('home'));
-	}
-	
-  	render() {
-  		console.log('render');
-  		console.log(this.props);
-	    return (
-	      	<div>
-	        	<Test pageName={this.props.pageName} />
-	      	</div>
-    	);
-  	}
-}
-
-const mapStateToProps = (state, ownProps) => {
-	return {
-		pageName: state.pageName
-	};
-}
-
-export default connect(mapStateToProps)(Home)
+export default asyncConnect([
+  {
+    promise: ({ store: { dispatch, getState }, match, helpers }) => {
+      return Promise.resolve('async connect');
+    }
+  }
+])(Home);

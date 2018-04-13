@@ -8,6 +8,7 @@ export default ({ body, preloadedState, title }) => {
       <head>
         <title>${title}</title>
         <link rel="stylesheet" href="${host}build/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       </head>
       
       <body>
