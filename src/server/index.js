@@ -1,12 +1,10 @@
 import express from 'express';
-import path from 'path';
 import cookieParser from 'cookie-parser';
 
-import { PORT, AUTH_ENDPOINT } from 'Configs';
+import { PORT } from 'Configs';
 import logger from 'Utils/logger.js';
 import { middlewareSsr } from './middleware/ssr';
-import { session, sessionLogin } from './middleware/session';
-import loginLayout from 'Layouts/login';
+import { session } from './middleware/session';
 
 const app = express();
 

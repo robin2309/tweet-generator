@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+        "Actions/*":["./src/common/actions/*"],
+        "Common/*":["./src/common/*"],
+        "Ui/*":["./src/common/components/Ui/*"],
+        "Components/*":["./src/common/components/*"],
+        "Containers/*":["./src/common/containers/*"],
+        "Utils/*":["./src/utils/*"]
+    }
+  },
+  "exclude": [
+    "build",
+    "node_modules"
+  ],
+  
+}

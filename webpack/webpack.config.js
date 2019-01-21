@@ -5,10 +5,9 @@ const nodeExternals = require('webpack-node-externals');
 const defineVars = require('./define');
 
 const BABEL_LOADER_PLUGINS = [
-  require.resolve('babel-plugin-transform-class-properties'),
-  require.resolve('babel-plugin-transform-object-rest-spread'),
-  require.resolve('babel-plugin-transform-regenerator'),
-  require.resolve('babel-plugin-transform-runtime')
+  require.resolve('@babel/plugin-proposal-class-properties'),
+  require.resolve('@babel/plugin-proposal-object-rest-spread'),
+  require.resolve('@babel/plugin-transform-runtime')
 ];
 
 const jsLoader = {
@@ -16,7 +15,7 @@ const jsLoader = {
     loader: 'babel-loader',
     exclude: /node_modules/,
     options: {
-        presets: ['env'],
+        presets: ['@babel/preset-env'],
         plugins: BABEL_LOADER_PLUGINS
     }
 };
@@ -26,7 +25,7 @@ const jsxLoader = {
     loader: 'babel-loader',
     exclude: /node_modules/,
     options: {
-        presets: ['env', 'react'],
+        presets: ['@babel/preset-env', '@babel/preset-react'],
         plugins: BABEL_LOADER_PLUGINS
     }
 };

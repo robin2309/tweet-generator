@@ -1,5 +1,4 @@
 // components
-import 'Containers/Header/Header.less';
 import 'Components/App/App.less';
 
 // external css

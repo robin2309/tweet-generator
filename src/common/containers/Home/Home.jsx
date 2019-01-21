@@ -1,9 +1,6 @@
 import React from 'react';
 import { asyncConnect } from 'redux-connect';
 
-import countriesActions from 'Actions/countries';
-import retailersActions from 'Actions/retailers';
-
 const Home = props => {
   return <div />;
 };
